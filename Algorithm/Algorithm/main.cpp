@@ -1,5 +1,4 @@
-#include "DxLib.h"
-#include <math.h>
+#include "Input.hpp"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -8,27 +7,37 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	SetGraphMode(640, 480, 16);
 	SetDrawScreen(DX_SCREEN_BACK);
 
-	double x1 = 320, y1 = 240;
-	double x2 = 80, y2 = 0;
+	int mouseX, mouseY;
 
 	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
-		DrawCircle(x1, y1, 2, 255, true);
-		DrawCircle(x2 + x1, y2 + y1, 2, 255, true);
+		KeyData::UpDate();
+		MouseData::Mouse_UpDate();
+		MouseWheelData::MouseWheel_Update();
 
-		if (CheckHitKey(KEY_INPUT_A) >= 1)
+		GetMousePoint(&mouseX, &mouseY);
+
+		if (mouseX >= 320)
 		{
-			double xd = x2 * cos(DX_PI_F / 180) - y2 * sin(DX_PI_F / 180);
-			double yd = x2 * sin(DX_PI_F / 180) + y2 * cos(DX_PI_F / 180);
-			x2 = xd;
-			y2 = yd;
+			printfDx("右\n");
 		}
-		if (CheckHitKey(KEY_INPUT_D) >= 1)
+		if (mouseY >= 240)
 		{
-			double xd = x2 * cos(-DX_PI_F / 180) - y2 * sin(-DX_PI_F / 180);
-			double yd = x2 * sin(-DX_PI_F / 180) + y2 * cos(-DX_PI_F / 180);
-			x2 = xd;
-			y2 = yd;
+			printfDx("下\n");
+		}
+
+		if (MouseData::GetClick(0) == 1)	// 0: 1: 2:
+		{
+			printfDx("左クリック\n");
+		}
+
+		if (MouseWheelData::GetMouseWheel(GetMouseWheelRotVol()) >= 1)
+		{
+			printfDx("前ホイー\n");
+		}
+		if (MouseWheelData::GetMouseWheel(GetMouseWheelRotVol()) <= -1)
+		{
+			printfDx("後ろホイー\n");
 		}
 	}
 
