@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Algorithm", "Algorithm\Algorithm.vcxproj", "{479C2FF3-5801-4E8D-8829-E0BFC9DFC90F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MouseInput", "Algorithm\Algorithm.vcxproj", "{479C2FF3-5801-4E8D-8829-E0BFC9DFC90F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Circle", "Circle\Circle.vcxproj", "{BE57BADD-D5E7-48EE-A217-F12B7924AE21}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScreenCoordinate", "ScreenCoordinate\ScreenCoordinate.vcxproj", "{829442D7-613B-40C2-A233-31B0FB5921F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{BE57BADD-D5E7-48EE-A217-F12B7924AE21}.Release|x64.Build.0 = Release|x64
 		{BE57BADD-D5E7-48EE-A217-F12B7924AE21}.Release|x86.ActiveCfg = Release|Win32
 		{BE57BADD-D5E7-48EE-A217-F12B7924AE21}.Release|x86.Build.0 = Release|Win32
+		{829442D7-613B-40C2-A233-31B0FB5921F7}.Debug|x64.ActiveCfg = Debug|x64
+		{829442D7-613B-40C2-A233-31B0FB5921F7}.Debug|x64.Build.0 = Debug|x64
+		{829442D7-613B-40C2-A233-31B0FB5921F7}.Debug|x86.ActiveCfg = Debug|Win32
+		{829442D7-613B-40C2-A233-31B0FB5921F7}.Debug|x86.Build.0 = Debug|Win32
+		{829442D7-613B-40C2-A233-31B0FB5921F7}.Release|x64.ActiveCfg = Release|x64
+		{829442D7-613B-40C2-A233-31B0FB5921F7}.Release|x64.Build.0 = Release|x64
+		{829442D7-613B-40C2-A233-31B0FB5921F7}.Release|x86.ActiveCfg = Release|Win32
+		{829442D7-613B-40C2-A233-31B0FB5921F7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
