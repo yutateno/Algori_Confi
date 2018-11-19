@@ -34,7 +34,7 @@ T SumK(T value, size_t count)
 
 int main()
 {
-	std::cout << std::setprecision(7);
+	std::cout << std::setprecision(15);
 	std::cout << "- float -\n";
 	std::cout << Sum<float>(0.01f, 10000) << '\n';
 	std::cout << Sum<float>(0.01f, 50000) << '\n';
