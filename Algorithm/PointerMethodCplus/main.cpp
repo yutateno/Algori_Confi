@@ -113,16 +113,16 @@ int main(int argc, char const *argv[])
 	CBase *pBase0 = new CDerived0;
 	CBase *pBase1 = new CDerived1;
 
-	for (int i = 0; i < pBase0->GetNumFunc(); i++) pBase0->ExecFunc(i);
-	for (int i = 0; i < pBase1->GetNumFunc(); i++) pBase1->ExecFunc(i);
+	for (int i = 0; i != pBase0->GetNumFunc(); ++i) pBase0->ExecFunc(i);
+	for (int i = 0; i != pBase1->GetNumFunc(); ++i) pBase1->ExecFunc(i);
 
-	for (int i = 0; i < pBase0->GetNumFunc(); i++)
+	for (int i = 0; i != pBase0->GetNumFunc(); ++i)
 	{
 		FUNC pfn = pBase0->GetFunc(i);
 		(pBase0->*pfn)();
 	}
 
-	for (int i = 0; i < pBase1->GetNumFunc(); i++)
+	for (int i = 0; i != pBase1->GetNumFunc(); ++i)
 	{
 		FUNC pfn = pBase1->GetFunc(i);
 		(pBase1->*pfn)();
