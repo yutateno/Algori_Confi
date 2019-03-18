@@ -9,6 +9,26 @@
 using namespace std;
 
 
+
+// 資源獲得時初期化用クラス
+class A
+{
+public:
+	int a;
+	void DoSomething() { cout << "Hello" << endl; }
+	A() { a = 0; }
+	~A() { cout << "Aオブジェクトは解体された" << endl; }
+};
+
+class B
+{
+public:
+	A* pA;
+	B() :pA(new A()) {}
+	~B() { delete pA; }
+};
+
+
 int main()
 {
 	// 入出力
@@ -118,7 +138,31 @@ int main()
 		}
 		cout << endl;
 	}
+	cout << endl << endl;
 
+
+
+	// 最大・最小
+	cout << min(3, 2) << endl;
+	cout << max(3, 2) << endl;
+
+	cout << min({ 3,2,1,5 }) << endl;
+	cout << max({ 3,2,1,5 }) << endl;
+
+	auto resulut = minmax({ 3,2,1,5 });
+	cout << resulut.first << endl;
+	cout << resulut.second << endl;
+	cout << endl << endl;
+
+
+
+	// 資源獲得時初期化(RAII
+	/*
+	アルゴリズムや構文というより考え方である
+	*/
+	B b;
+	return 1;
+	b.pA->DoSomething();
 
 
 
