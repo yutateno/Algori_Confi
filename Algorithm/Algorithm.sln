@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PointerMethodCplus", "Point
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPPFourteenBasic", "CPPFourteenBasic\CPPFourteenBasic.vcxproj", "{9EF85387-146A-42C1-8E7D-2C17E1F6AEBA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPPFourteenBasic_Second", "CPPFourteenBasic_Second\CPPFourteenBasic_Second.vcxproj", "{6FE8E6B4-FB26-46DA-896F-9031BAE1DF81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,6 +113,14 @@ Global
 		{9EF85387-146A-42C1-8E7D-2C17E1F6AEBA}.Release|x64.Build.0 = Release|x64
 		{9EF85387-146A-42C1-8E7D-2C17E1F6AEBA}.Release|x86.ActiveCfg = Release|Win32
 		{9EF85387-146A-42C1-8E7D-2C17E1F6AEBA}.Release|x86.Build.0 = Release|Win32
+		{6FE8E6B4-FB26-46DA-896F-9031BAE1DF81}.Debug|x64.ActiveCfg = Debug|x64
+		{6FE8E6B4-FB26-46DA-896F-9031BAE1DF81}.Debug|x64.Build.0 = Debug|x64
+		{6FE8E6B4-FB26-46DA-896F-9031BAE1DF81}.Debug|x86.ActiveCfg = Debug|Win32
+		{6FE8E6B4-FB26-46DA-896F-9031BAE1DF81}.Debug|x86.Build.0 = Debug|Win32
+		{6FE8E6B4-FB26-46DA-896F-9031BAE1DF81}.Release|x64.ActiveCfg = Release|x64
+		{6FE8E6B4-FB26-46DA-896F-9031BAE1DF81}.Release|x64.Build.0 = Release|x64
+		{6FE8E6B4-FB26-46DA-896F-9031BAE1DF81}.Release|x86.ActiveCfg = Release|Win32
+		{6FE8E6B4-FB26-46DA-896F-9031BAE1DF81}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
