@@ -4,6 +4,9 @@
 #include <chrono>
 #include <random>
 #include <map>
+#include <cfenv>
+#include <string>
+#include <cassert>
 
 
 using namespace std;
@@ -51,6 +54,31 @@ template<typename T>
 void MakeDraw(T t)
 {
 	t.Draw();
+}
+
+
+
+// throw文
+[[noreturn]]		// 関数が正常に終了しないことに対するコンパイラの警告を抑止する。
+void DoSomething()
+{
+	throw exception("何か異常が起きた");
+}
+
+
+
+
+
+// 浮動小数点数例外
+void Report_Fexcepts()
+{
+	if (fetestexcept(FE_DIVBYZERO))	 cout << "FE_DIVBYZERO	 : 0による除算が行われた"		 << endl;
+	if (fetestexcept(FE_INEXACT))	 cout << "FE_INEXACT	 : 精度が落ちる計算が行われた"	 << endl;
+	if (fetestexcept(FE_OVERFLOW))	 cout << "FE_OVERFLOW	 : オーバーフローが起こった"	 << endl;
+	if (fetestexcept(FE_UNDERFLOW))	 cout << "FE_UNDERFLOW	 : アンダーフローが起こった"	 << endl;
+	if (fetestexcept(FE_INVALID))	 cout << "FE_INVALID	 : 不正な計算が行われた"		 << endl;
+	feclearexcept(FE_ALL_EXCEPT);		// 異常の履歴を削除
+	cout << endl;
 }
 
 
@@ -217,6 +245,71 @@ int main()
 	MakeDraw(c);
 	Rectangle r;
 	MakeDraw(r);
+	cout << endl << endl;
+
+
+
+	// try-catch例外処理
+	vector<int> ve{ 2,3,4 };
+	int a = 0;
+	try
+	{
+		//// 怖いから実行しませんが、フリーストアがなくなると例外が発生する。
+		//while (true)
+		//{
+		//	int* p = new int[0x1fffffff];
+		//	cout << p << endl;
+		//}
+
+		a = stoi("987654321987654321");		// intの最大値を超える
+		cout << a << endl;
+
+		a = stoi("abc");					// 型変換
+		cout << a << endl;
+
+		cout << ve.at(3) << endl;			// 配列外参照
+	}
+	catch (exception& e)
+	{
+		cerr << e.what() << endl;
+	}
+	cout << endl << endl;
+
+
+	//// try-catchをしないでフリーストアがなくなったら nullptr が返すようになる
+	//while (true)
+	//{
+	//	int* p = new(nothrow) int[0x1fffffff];
+	//	if (p != nullptr)
+	//	{
+	//		cout << p << endl;
+	//	}
+	//	else
+	//	{
+	//		cout << "failure" << endl;
+	//	}
+	//}
+
+
+
+	// throw文で直接渡す
+	try
+	{
+		DoSomething();
+	}
+	catch (exception& e)
+	{
+		cerr << e.what() << endl;
+	}
+	cout << endl << endl;
+
+
+
+	// アサーション Debugのみ実行されてReleaseでは実行されない
+	int low = 10;
+	int high = 2;
+
+	// assert(low < high);
 
 
 

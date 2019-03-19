@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{6FE8E6B4-FB26-46DA-896F-9031BAE1DF81}</ProjectGuid>
+    <ProjectGuid>{1A4D8175-5F0B-421A-8F3E-E532F85108E8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>CPPFourteenBasicSecond</RootNamespace>
+    <RootNamespace>CPPFourteenBasicThird</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,7 +88,6 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <FloatingPointModel>Strict</FloatingPointModel>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
