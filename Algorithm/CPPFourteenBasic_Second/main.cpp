@@ -29,6 +29,32 @@ public:
 };
 
 
+
+// ジェネリックプログラミング
+class Circle
+{
+public:
+	Circle() {}
+	~Circle() {}
+	void Draw() { cout << "〇" << endl; }
+};
+
+class Rectangle
+{
+public:
+	Rectangle() {}
+	~Rectangle() {}
+	void Draw() { cout << "□" << endl; }
+};
+
+template<typename T>
+void MakeDraw(T t)
+{
+	t.Draw();
+}
+
+
+
 int main()
 {
 	// 入出力
@@ -161,8 +187,36 @@ int main()
 	アルゴリズムや構文というより考え方である
 	*/
 	B b;
-	return 1;
-	b.pA->DoSomething();
+	// return 1;
+	// b.pA->DoSomething();
+
+
+
+	// ムーブコンストラクタ p215
+	// <https://ja.cppreference.com/w/cpp/language/move_constructor>
+	// <https://marycore.jp/prog/cpp/move-constructor/>
+
+
+
+	// 純粋仮想関数
+	/*
+	virtual void Draw() = 0;
+	例えば基底クラスでDrawの中身を明示することが出来ない場合
+	このようなクラスを抽象クラスと呼ぶ
+
+	virtual void Draw() {}
+	このような関数は仮想関数と呼ぶ
+
+	どちらにしても派生クラスでメンバ関数の再定義と後ろに override を付ける(実際には付けなくてもいいが付けた方が分かりやすい)
+	*/
+
+
+
+	// ジェネリックプログラミング 型に依存しない形
+	Circle c;
+	MakeDraw(c);
+	Rectangle r;
+	MakeDraw(r);
 
 
 
