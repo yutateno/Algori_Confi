@@ -1,4 +1,4 @@
-<Algorithm>※VisualStudio上では[MouseInput]に変更されているかも
+﻿<Algorithm>※VisualStudio上では[MouseInput]に変更されているかも
 DXライブラリを用いて、マウスの情報を取得するもの
 
 <CPPFourteenBasic>
@@ -36,6 +36,11 @@ DXライブラリを用いて、マウスの情報を取得するもの
 ・ジェネリックプログラミング
 ・例外処理
 ・アサーション
+
+<CPPFourteenBasic_Third>
+・並列化非並列化
+・排他制御
+・OpenMP
 
 <Circle>
 ただの回転（Y軸を中心に回転していると考えれば3D空間上でも活用できる）
