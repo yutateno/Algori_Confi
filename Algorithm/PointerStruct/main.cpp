@@ -12,22 +12,24 @@ struct STNameAge
 
 void PrintStruct(STNameAge* pstNameAge, int iSize);
 
+
 int main()
 {
 	STNameAge stNameAge[2];
 
 	stNameAge[0].iId = 1;
-	strcpy(stNameAge[0].szName, "Tateno");
+	strcpy_s(stNameAge[0].szName, "Tateno");
 	stNameAge[0].iAge = 23;
 
 	stNameAge[1].iId = 2;
-	strcpy(stNameAge[1].szName, "TatenoYU");
+	strcpy_s(stNameAge[1].szName, "TatenoYU");
 	stNameAge[1].iAge = 46;
 
 	PrintStruct(stNameAge, sizeof(stNameAge) / sizeof(STNameAge));
 
 	return 0;
 }
+
 
 void PrintStruct(STNameAge * pstNameAge, int iSize)
 {

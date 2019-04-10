@@ -13,8 +13,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
-		DrawCircle(x1, y1, 2, 255, true);
-		DrawCircle(x2 + x1, y2 + y1, 2, 255, true);
+		DrawCircle(static_cast<int>(x1), static_cast<int>(y1), 2, 255, true);
+		DrawCircle(static_cast<int>(x2 + x1), static_cast<int>(y2 + y1), 2, 255, true);
 
 		if (CheckHitKey(KEY_INPUT_A) >= 1)
 		{

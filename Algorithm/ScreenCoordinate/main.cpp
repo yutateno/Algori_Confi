@@ -11,8 +11,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	MATRIX proj = GetCameraProjectionMatrix();
 
 	// ビューポート行列（スクリーン行列）の作成
-	float w = (float)1024 / 2.0f;
-	float h = (float)768 / 2.0f;
+	float w = 1024.0f / 2.0f;
+	float h = 768.0f / 2.0f;
 
 	MATRIX viewport = {
 		w , 0 , 0 , 0 ,
@@ -40,7 +40,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// ３Ｄ空間上に球を描画する
 	DrawSphere3D(VGet(320.0f, 200.0f, 0.0f), 80.0f, 32, GetColor(255, 0, 0), GetColor(255, 255, 255), TRUE);
 
-	DrawCircle(screenPos.x, screenPos.y, 10, 255, true);
+	DrawCircle(static_cast<int>(screenPos.x), static_cast<int>(screenPos.y), 10, 255, true);
 
 	// キー入力待ちをする
 	WaitKey();
