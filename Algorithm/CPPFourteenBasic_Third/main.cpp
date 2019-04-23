@@ -151,4 +151,14 @@ int main()
 	// int omp_get_thread_num();	// 並列スレッドの番号を返す
 	// int omp_in_parallel();		// 並列実行中かどうかを返す（0以外なら並列実行中
 
+
+
+	// 多重配列（二重）での大きさを取得する
+	int map[32][18];
+
+	std::cout << std::extent<decltype(map), 0>::value << " * " << std::extent<decltype(map), 1>::value << std::endl;
+
+
+
+	return 0;
 }
